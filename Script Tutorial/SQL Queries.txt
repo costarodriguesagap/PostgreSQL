@@ -6,3 +6,5 @@ SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth ASC;
 SELECT * FROM person LIMIT 10;
 SELECT * FROM person OFFSET 5 LIMIT 10;
 SELECT * FROM person FETCH FIRST 10 ROWS ONLY;
+SELECT * FROM person WHERE date_of_birth BETWEEN '2019-09-20' AND current_date;
+SELECT * FROM person WHERE email LIKE '@gmail.com';
