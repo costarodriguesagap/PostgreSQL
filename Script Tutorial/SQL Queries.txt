@@ -1,4 +1,4 @@
-SELECT FROM person;
+SELECT FROM person; --> Count *
 SELECT * FROM person WHERE gender='Female' and (country_of_birth = 'Portugal');
 SELECT * FROM person WHERE gender='Female' and (country_of_birth = 'Poland' or country_of_birth = 'China');
 SELECT * FROM person WHERE gender='Female' and country_of_birth IN ('Poland','Portugal');
@@ -8,3 +8,6 @@ SELECT * FROM person OFFSET 5 LIMIT 10;
 SELECT * FROM person FETCH FIRST 10 ROWS ONLY;
 SELECT * FROM person WHERE date_of_birth BETWEEN '2019-09-20' AND current_date;
 SELECT * FROM person WHERE email LIKE '@gmail.com';
+SELECT * FROM person WHERE country_of_birth ILIKE 'p%'; --> Nao é case Sensitive !!!!!!
+SELECT country_of_birth,count(1) FROM person GROUP BY country_of_birth ORDER BY 2 DESC;
+SELECT country_of_birth,count(1) FROM person GROUP BY country_of_birth HAVING count(1) = 2;
