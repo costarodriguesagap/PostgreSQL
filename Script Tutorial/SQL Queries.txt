@@ -1,0 +1,8 @@
+SELECT FROM person;
+SELECT * FROM person WHERE gender='Female' and (country_of_birth = 'Portugal');
+SELECT * FROM person WHERE gender='Female' and (country_of_birth = 'Poland' or country_of_birth = 'China');
+SELECT * FROM person WHERE gender='Female' and country_of_birth IN ('Poland','Portugal');
+SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth ASC; 
+SELECT * FROM person LIMIT 10;
+SELECT * FROM person OFFSET 5 LIMIT 10;
+SELECT * FROM person FETCH FIRST 10 ROWS ONLY;
