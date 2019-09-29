@@ -14,3 +14,12 @@ SELECT country_of_birth,count(1) FROM person GROUP BY country_of_birth HAVING co
 SELECT MAX(price) FROM car;
 SELECT AVG(price) FROM car;
 SELECT ROUND(AVG(price)) FROM car;
+SELECT COALESCE(email,'************************') FROM person FETCH FIRST 30 ROWS ONLY;
+SELECT NOW() :: DATE;
+SELECT NOW() :: TIME;
+SELECT (NOW() - INTERVAL '10 YEARS') :: DATE;
+SELECT EXTRACT(YEAR FROM NOW());
+SELECT EXTRACT(CENTURY FROM NOW());
+SELECT first_name,last_name,gender,country_of_birth,date_of_birth, AGE(NOW(),date_of_birth) FROM person FETCH FIRST 30 ROWS ONLY;
+ALTER TABLE person ADD CONSTRAINT unique_email UNIQUE (email);
+ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Female' or gender = 'Male');
