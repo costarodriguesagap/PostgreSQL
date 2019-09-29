@@ -1,7 +1,6 @@
-\l 			- lista as base de dados existentes
+\l 					- lista as base de dados existentes
 \c <database_name> 	- conectar a uma determinada base de dados
-\d 			- mostra o detalhe da base de dados
+\d 					- mostra o detalhe da base de dados
 \d <table_name> 	- mostra a definição de uma determinada tabela
-\i <path_file>          - executa comandos SQL contidos no ficheiro localizado no <path_file> (usar o site https://www.mockaroo.com/ para gerar dados para inserir numa tabela)
-
- 
+\i <path_file>      - executa comandos SQL contidos no ficheiro localizado no <path_file> (usar o site https://www.mockaroo.com/ para gerar dados para inserir numa tabela)
+\x 					- para activar/desactivar o modo estendido no output da consola
