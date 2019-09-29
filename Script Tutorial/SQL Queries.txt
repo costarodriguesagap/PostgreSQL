@@ -23,3 +23,9 @@ SELECT EXTRACT(CENTURY FROM NOW());
 SELECT first_name,last_name,gender,country_of_birth,date_of_birth, AGE(NOW(),date_of_birth) FROM person FETCH FIRST 30 ROWS ONLY;
 ALTER TABLE person ADD CONSTRAINT unique_email UNIQUE (email);
 ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Female' or gender = 'Male');
+
+INSERT INTO person (id,first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+VALUES (1005,'Alf', 'Christofol', 'achristofol0@macromedia.com', 'Male', '2018/07/10', 'Estonia') ON CONFLICT (id) DO NOTHING; --> Não dá erro no insert quando a chave é duplicada, forma de implementar um LOAD RESUME;
+
+INSERT INTO person (id,first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+VALUES (1005,'Alf', 'Christofol', 'achristofol0@macromedia.com', 'Male', '2018/07/10', 'Estonia') ON CONFLICT (id) DO UPDATE SET email = EXCLUDED.email; --> Se já existir, faz apenas o UPDATE do campo email;
